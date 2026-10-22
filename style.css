@@ -1,0 +1,194 @@
+/* Rereader's site, in the app's own palette: gold and lavender on navy (dark), bronze and navy
+   on parchment (light) */
+:root {
+  --bg: #12182a;
+  --surface: #1a2137;
+  --text: #e6e3f0;
+  --muted: #9ca6e4;
+  --accent: #efbf79;
+  --accent-pale: #f7e3c2;
+  --toolbar: #39417f;
+  --outline: #3b406b;
+  --frame: #05070d;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f6efe0;
+    --surface: #fbf6ea;
+    --text: #1c2340;
+    --muted: #5a6199;
+    --accent: #8a5a12;
+    --accent-pale: #f0dcb4;
+    --toolbar: #39417f;
+    --outline: #b9bcd9;
+    --frame: #1c2340;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Crimson Text", Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.55;
+}
+
+a { color: var(--accent); }
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+header.top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 0;
+}
+
+header.top img { width: 40px; height: 40px; border-radius: 10px; }
+
+header.top .name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* The hero: words beside a phone */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+  padding: 32px 0 56px;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  line-height: 1.1;
+  margin: 0 0 16px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero p.lead {
+  font-size: 1.35rem;
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+
+.play {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #000;
+  color: #fff;
+  border: 1px solid #a6a6a6;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+.play svg { width: 28px; height: 28px; flex: none; }
+.play strong { display: block; font-size: 1.3rem; font-weight: 500; }
+.play:hover { border-color: #fff; }
+
+.note {
+  margin-top: 14px;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+/* A phone drawn in CSS, so a screenshot or recording of any shape fits without squashing */
+.phone {
+  width: min(300px, 78vw);
+  aspect-ratio: 540 / 1058;
+  border: 12px solid var(--frame);
+  border-radius: 36px;
+  overflow: hidden;
+  background: var(--frame);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--outline);
+}
+
+.phone img,
+.phone video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* What it does */
+.features {
+  display: grid;
+  /* Two by two on a wide screen, one column on a phone */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+  gap: 20px;
+  padding-bottom: 56px;
+}
+
+.feature {
+  background: var(--surface);
+  border: 1px solid var(--outline);
+  border-radius: 16px;
+  padding: 20px 22px;
+}
+
+.feature h2 {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.feature p { margin: 0; }
+
+/* More screenshots */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  justify-items: center;
+  padding-bottom: 64px;
+}
+
+.gallery figure { margin: 0; text-align: center; }
+.gallery .phone { width: min(220px, 70vw); border-width: 9px; border-radius: 28px; }
+.gallery figcaption { margin-top: 10px; color: var(--muted); font-size: 1.05rem; }
+
+footer {
+  border-top: 1px solid var(--outline);
+  padding: 24px 0 40px;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+footer a { margin-right: 18px; }
+
+/* The privacy policy */
+.policy { max-width: 720px; padding-bottom: 48px; }
+.policy h1 { color: var(--accent); font-weight: 600; font-size: 2.2rem; margin: 8px 0 4px; }
+.policy h2 { color: var(--accent); font-weight: 600; font-size: 1.35rem; margin: 28px 0 6px; }
+.policy .effective { color: var(--muted); margin-top: 0; }
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 36px;
+    padding-top: 12px;
+  }
+}
