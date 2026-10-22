@@ -130,6 +130,22 @@ header.top .name {
   object-fit: cover;
 }
 
+/* The Scripture shown in the video and screenshots, credited beneath them */
+.demo { margin: 0; }
+
+.credit {
+  width: min(300px, 78vw);
+  margin: 10px auto 0;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  text-align: center;
+  color: var(--muted);
+}
+
+.credit a { color: inherit; }
+
+.gallery .credit { width: min(220px, 70vw); margin-top: 4px; }
+
 /* What it does */
 .features {
   display: grid;
