@@ -131,10 +131,9 @@ header.top .name {
 }
 
 /* The Scripture shown in the video and screenshots, credited beneath them */
-.demo { margin: 0; }
+.demo { margin: 0; width: min(300px, 78vw); }
 
 .credit {
-  width: min(300px, 78vw);
   margin: 10px auto 0;
   font-size: 0.8rem;
   line-height: 1.35;
@@ -144,7 +143,8 @@ header.top .name {
 
 .credit a { color: inherit; }
 
-.gallery .credit { width: min(220px, 70vw); margin-top: 4px; }
+.gallery figure { width: min(220px, 70vw); }
+.gallery .credit { margin-top: 4px; }
 
 /* What it does */
 .features {
